@@ -79,7 +79,7 @@ public class Main {
         int month = 0;
         int investFinal = 12_000_000;
         int percentInMonth = 7;
-        while (invest < 12_000_000) {
+        while (invest < investFinal) {
             invest = invest + invest * percentInMonth / 100;
             month++;
             if (month % 6 == 0) {
@@ -95,8 +95,9 @@ public class Main {
         int invest = 15_000;
         int year = 9;
         int month = 0;
+        int percentInMonth = 7;
         while (month < (year * 12)) {
-            invest = invest + invest * 7 / 100;
+            invest = invest + invest * percentInMonth / 100;
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + invest + " рублей.");
