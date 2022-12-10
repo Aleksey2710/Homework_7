@@ -12,12 +12,13 @@ public class Main {
         task8();
     }
     public static void task1 () {
-        System.out.println("Задача 1.1");
+        System.out.println("Задача 1");
 
         int invest = 15_000;
         int month = 0;
         int total = 0;
-        while (total <= 2_459_000) {
+        int investFinal = 2_459_000;
+        while (total <= investFinal) {
             month++;
             total += total / 100; //условно 12% годовых.
             total += invest;
@@ -62,9 +63,11 @@ public class Main {
                                         рублей под процент и ЖДЕТ! не докладывая деньги на вклад!!! */
         int invest = 15_000;
         int month = 0;
-        while (invest < 12_000_000) {
+        int investFinal = 12_000_000;
+        int percentInMonth = 7;
+        while (invest < investFinal) {
             System.out.println("Месяц " + month + ", сумма накоплений равна " + invest + " рублей.");
-            invest = invest + invest * 7 / 100; //7% в месяц - 84% годовых (хотел бы я такой вклад)
+            invest = invest + invest * percentInMonth / 100; //7% в месяц - 84% годовых (хотел бы я такой вклад)
             month++;
         }
         System.out.println("Всего нужно " + month + " месяцев, чтобы накопить " + invest + " рублей.");
@@ -74,8 +77,10 @@ public class Main {
 
         int invest = 15_000;
         int month = 0;
+        int investFinal = 12_000_000;
+        int percentInMonth = 7;
         while (invest < 12_000_000) {
-            invest = invest + invest * 7 / 100;
+            invest = invest + invest * percentInMonth / 100;
             month++;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + invest + " рублей.");
@@ -109,22 +114,16 @@ public class Main {
         }
     }
     public static void task8 () {  // Получилось два решения, но первое нравится больше
-        System.out.println("Задача 8.1");
+        System.out.println("Задача 8");
 
         int todayYear = 2022;
         int beforeTodayYear = 200;
         int afterTodayYear = 100;
+        int year = 0;
 
-        for (int i = 0; i <= (todayYear + afterTodayYear); i = i + 79) {
-            if (i >= (todayYear - beforeTodayYear)) {
-                System.out.println(i);
-            }
-        }
-        System.out.println("Задача 8.2");
-
-        for (int i = (todayYear-beforeTodayYear); i <= (todayYear + afterTodayYear); i++) {
-            if (i % 79 == 0) {
-                System.out.println(i);
+        for (; year <= (todayYear + afterTodayYear); year = year + 79) {
+            if (year >= (todayYear - beforeTodayYear)) {
+                System.out.println(year);
             }
         }
     }
